@@ -1,13 +1,10 @@
 #include "Shape.h"
 
-
-
 struct ShapeFactory
 {
     virtual unique_ptr<Shape> create()=0;
     virtual ~ShapeFactory() {}
 };
-
 
 struct LineFactory : ShapeFactory
 {
@@ -34,9 +31,6 @@ struct CircleFactory : ShapeFactory
   }
 };
 
-
-
-
 //工厂使用
 class Client{
 
@@ -51,15 +45,11 @@ class Client{
     void process()
     {
       auto pShape=pFactory->create();
-
-
     }
 
     void foo()
     {
       auto pShape=pFactory->create();
-
-
     }
 
 };

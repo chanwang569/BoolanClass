@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 template <typename F>
 class ScopeGuard
 {
@@ -44,10 +42,6 @@ private:
     bool m_dismiss;
 
 };
-
-
-
-
 
 void FileProcess()
 {

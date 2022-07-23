@@ -12,8 +12,6 @@ enum class OutputFormat
   XML
 };
 
-
-
 class TextProcessor
 {
 public:
