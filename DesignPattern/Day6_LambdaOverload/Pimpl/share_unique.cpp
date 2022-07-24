@@ -34,7 +34,7 @@ class shared_ptr{
 
 int main(){
 
-    unique_ptr<Base> up1=make_unique<Sub>();
+    unique_ptr<Base> up1=make_unique<Sub>();//Note：这里解释为啥要求父类的析构要声明称virtual
     //~Base();
 
     shared_ptr<Base> up1=make_shared<Sub>();

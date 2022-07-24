@@ -6,8 +6,6 @@
 using namespace std;
 
 
-
-
 template <class... T>
 struct overloaded;
 
@@ -30,7 +28,7 @@ struct overloaded<T, U...> : T, overloaded<U...> {
 
 
 template <class... T>
-overloaded<T...> make_overload(T... t) {
+overloaded<T...> make_overload(T... t) { //Note:区别在这里。 没有自定义模版推导（C++17）之前的方案。
   return overloaded<T...>(t...);
 };
 

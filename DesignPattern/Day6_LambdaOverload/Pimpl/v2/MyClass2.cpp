@@ -1,7 +1,7 @@
 #include "MyClass2.h"
 #include <iostream>
 using namespace std;
-
+//Note: 这个版本编译器会报错。原因是unique_ptr需要类型完整。
 class MyClass::Impl {
 
 public:

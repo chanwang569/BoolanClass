@@ -1,4 +1,6 @@
 //业务操作
+
+//Note: 多个变化方向的例子
 class Stream{
    
 public：

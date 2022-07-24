@@ -1,4 +1,5 @@
 //业务操作
+//Note: 一个变化方向的例子。
 class Stream{
 public：
     virtual char Read(int number)=0;

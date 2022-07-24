@@ -1,4 +1,4 @@
-
+//Note V3: 继续增加OracleDBFactory的实现，用来封装一组 Connection， Command，DataReader的组合
 //数据库访问有关的基类
 class IDBConnection{   
 };

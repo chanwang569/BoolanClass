@@ -70,7 +70,7 @@ public:
                            value(rhs.value)
     {
 
-        rhs.data = nullptr; // 2. 将源对象的值设为有效状态
+        rhs.data = nullptr; // 2. 将源对象的值设为无效状态
         cout << "move ctor" << endl;
     }
 

@@ -1,4 +1,4 @@
-
+//Note: v2. 抽象，将connection， command， reader的初始化集中在EmployeeDAO的构造函数里
 //数据库访问有关的基类
 class IDBConnection{
     
