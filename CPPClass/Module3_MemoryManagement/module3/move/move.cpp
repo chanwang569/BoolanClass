@@ -102,8 +102,8 @@ public:
 Widget createWidget()
 {
     Widget w(100,200);
-    //return w;
-    return std::move(w);//不必要！
+    return w;
+    //return std::move(w);//不必要！
 }
 
 void process_c(Widget param)

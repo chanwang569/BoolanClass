@@ -1,8 +1,4 @@
 
-
-
-
-
 	virtual void MyClass::invoke()
 	{
 		cout << "invoke" << endl;

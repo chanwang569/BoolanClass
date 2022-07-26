@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// note：解释引用折叠
 class Widget{
 public:	
     Widget(){}
@@ -67,7 +67,7 @@ void logAndProcess(const T&& param){
 // class Vector{
 
 // public:
-//     void process(T&& t)
+//     void process(T&& t) //note:这里不参与类型推导，所以 t是右值
 //     {
 
 
@@ -85,7 +85,7 @@ int main()
 
     //process(w);//Widget&
 
-    Widget&& wr=...;
+    //Widget&& wr=...;
     
     auto&& w1=w;//w：Widget& , w1: Widget& &&--> Widget&
     auto& w2=w;// w: Widget&, w2: Widget& & --> Widget&

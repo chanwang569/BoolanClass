@@ -25,7 +25,7 @@ public:
 };
 
 
-
+//Note：主要差别就在这里。 在当前的cpp中能是能看到impl的完整定义的。所以uniptr可以析构。
 //析构
 MyClass::~MyClass()=default;// 这里生成的析构器可以看到Impl的定义
 

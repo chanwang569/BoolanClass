@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Index: 3 
+// Index: 3 解释5大函数的使用场景
 // 
 class Point{
     int m_x;

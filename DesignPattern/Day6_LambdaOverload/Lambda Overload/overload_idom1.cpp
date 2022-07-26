@@ -70,7 +70,7 @@ struct overloaded : Ts... {
 
 template<class... Ts> 
 overloaded(Ts...) -> overloaded<Ts...>; //自定义模板推导
-
+//Note:构造器参数变成了模版参数
 int main(){
 
 

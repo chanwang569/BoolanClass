@@ -3,7 +3,7 @@
 #include <array>
 using namespace std;
 
-//Index 6: 
+//Index 6: 解释vector & array使用move 语义要注意的点
 
 class Point{
     int m_x;
@@ -35,16 +35,16 @@ public:
         cout<<"copy ctor"<<endl;
 
     }	
-
-    Widget(Widget&& rhs) noexcept: 
+    //Widget(Widget&& rhs): 
+    Widget(Widget&& rhs) noexcept:
         data(rhs.data),// 1. 窃取源对象的指针值
     	value(rhs.value) 
     { 
         rhs.data = nullptr;   // 2. 将源对象的值设为有效状态
         cout<<"move ctor"<<endl; 
     }	    
-
-    Widget& operator=(Widget&& rhs)	noexcept
+    Widget& operator=(Widget&& rhs)
+    //Widget& operator=(Widget&& rhs)	noexcept
     {	
         if(this==&rhs)
         {
@@ -94,7 +94,7 @@ public:
 
 vector<Widget> getVec()
 {
-  vector<Widget> vec(1000);
+  vector<Widget> vec(100);
 
   return vec;
 }
@@ -117,21 +117,21 @@ string getText()
 int main()
 {
     
-    vector<Widget>  vm;
-    vm=getVec();  //vector 移动
+    vector<Widget>  vm; 
+    vm=getVec();  //vector 移动  // Note, 不会调用Widget的移动构造函数； 这里没有返回值优化，因为不是初始化
 
     
     array<Widget,20> am;
     am=getArr(); //元素移动，不需要强异常保证。
     
     
-    vector<Widget> vw;
-    for(int i=0;i<30;i++)
-    {
-        vw.emplace_back(i*10,i*20); //元素移动. 在增加capacity的时候会频繁调用widget的移动构造，所以最好还是写move
-        //Widget 的移动构造没有noexcept，那就是copy构造 STL一般都需要强异常保证
-        cout<<vw.size()<<" / "<<vw.capacity()<<endl; 
-    }
+    // vector<Widget> vw;
+    // for(int i=0;i<30;i++)
+    // {
+    //     vw.emplace_back(i*10,i*20); //元素移动. 在增加capacity的时候会频繁调用widget的移动构造，所以最好还是写move
+    //     //Widget 的移动构造没有noexcept，那就是copy构造 STL一般都需要强异常保证
+    //     cout<<vw.size()<<" / "<<vw.capacity()<<endl; 
+    // }
 
 }
 

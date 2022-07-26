@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-// Index:5 
-//阐述如何处理类中使用其他成员的处理， 如果继承父类也用同样的处理方式
+// Index:5 阐述如何处理类中使用其他成员的处理， 如果继承父类也用同样的处理方式
 class MyClass
 {
 public:
